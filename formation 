@@ -1,0 +1,273 @@
+<!---- index.html ---->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFormation Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">TechFormation</a>
+            <div class="nav-links">
+                <a href="#courses">Formations</a>
+                <a href="#about">À propos</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="cta">Connexion</a>
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Formez-vous aux technologies du futur</h1>
+                <p>Devenez expert en développement web et cybersécurité</p>
+                <button class="cta" onclick="showCourses()">Voir les formations</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2>Nos formations</h2>
+            <div class="courses-grid">
+                <div class="course-card html">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML/CSS</h3>
+                    <p>Maîtrisez les bases du développement web</p>
+                    <a href="web-dev.html" class="cta">Détails</a>
+                </div>
+                
+                <div class="course-card js">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>Développez des applications interactives</p>
+                    <a href="javascript.html" class="cta">Détails</a>
+                </div>
+
+                <div class="course-card security">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cybersécurité</h3>
+                    <p>Protégez les systèmes informatiques</p>
+                    <a href="cybersecurity.html" class="cta">Détails</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 TechFormation Pro</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html><!---- web-dev.html ---->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formation HTML/CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">...</nav>
+
+    <section class="course-details">
+        <div class="container">
+            <h1>Formation HTML/CSS</h1>
+            <div class="syllabus">
+                <h2>Programme :</h2>
+                <ol>
+                    <li>Les bases du HTML5</li>
+                    <li>CSS moderne (Flexbox, Grid)</li>
+                    <li>Responsive Design</li>
+                    <li>Animations CSS</li>
+                </ol>
+            </div>
+            <div class="registration">
+                <h2>Inscription</h2>
+                <form id="registrationForm">
+                    <input type="text" placeholder="Nom complet" required>
+                    <input type="email" placeholder="Email" required>
+                    <button type="submit" class="cta">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>/* styles.css */
+:root {
+    --primary: #2A2A72;
+    --secondary: #00C9FF;
+    --accent: #FF3CAC;
+    --dark: #0a192f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar {
+    background: var(--dark);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.cta {
+    background: var(--accent);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(45deg, var(--dark), #020c1b);
+    color: white;
+    padding-top: 8rem;
+}
+
+.courses {
+    padding: 5rem 0;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.course-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+}
+
+.course-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.html { border-top: 4px solid #E44D26; }
+.js { border-top: 4px solid #F0DB4F; }
+.security { border-top: 4px solid #00C9FF; }
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}// script.js
+// Menu mobile
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+});
+
+// Animation au défilement
+window.addEventListener('scroll', () => {
+    const cards = document.querySelectorAll('.course-card');
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if(cardTop < window.innerHeight * 0.8) {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }
+    });
+});
+
+// Fonctionnalités supplémentaires
+function showCourses() {
+    document.querySelector('#courses').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Gestionnaire de formulaire de contact
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Merci pour votre message ! Nous vous répondrons sous 48h.');
+    e.target.reset();
+});
